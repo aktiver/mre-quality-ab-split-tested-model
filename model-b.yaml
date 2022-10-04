@@ -1,0 +1,15 @@
+---
+apiVersion: machinelearning.seldon.io/v1alpha2
+kind: SeldonDeployment
+metadata:
+  name: model-b
+spec:
+  name: model-b
+  predictors:
+  - graph:
+      children: []
+      implementation: MLFLOW_SERVER
+      modelUri: s3://adeptdemo/adept/1/2b34f79b4ab243ea998109dce4c3d49d/artifacts/model/
+      name: mre-classifier
+    name: mre-classifier
+    replicas: 1
